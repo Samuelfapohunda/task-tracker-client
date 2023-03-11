@@ -23,7 +23,7 @@ const [showAddTask, setShowAddTask] = useState<boolean>(false)
 
 
 const fetchData = () => {
-fetch("http://localhost:2500").then((res) => res.json())
+fetch("https://task-tracker-server2.onrender.com/").then((res) => res.json())
 .then((data) => {setLists(data)})
 }
 
@@ -36,26 +36,6 @@ useEffect(() => {
  
   const initialTasks: 
   ITasks[] = [
-    {
-        _id: 1,
-        name: 'Go to the Market',
-       date: "Friday 4th of March",
-       reminder: true
-    },
-
-    {
-        _id: 2,
-        name: 'Doctors Appointment',
-       date: "Friday 4th of March",
-       reminder: true
-    },
-
-    {
-        _id: 3,
-        name: 'Cleaning',
-       date: "Friday 4th of March",
-       reminder: false
-    },   
 
 ] 
 
@@ -78,7 +58,7 @@ useEffect(() => {
   const deleteTask = (id: string) => {
 
     
-    fetch(`http://localhost:2500/${id}`, {
+    fetch(`https://task-tracker-server2.onrender.com/${id}`, {
       method: "DELETE"  }).then((res) => res.json())
     .then((data) => {
       console.log(data);

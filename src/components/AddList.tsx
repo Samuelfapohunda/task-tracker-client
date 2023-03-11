@@ -21,7 +21,7 @@ const AddList:React.FunctionComponent<AddProps> = (props) => {
 
 
 
-        fetch("http://localhost:2500", {
+        fetch("https://task-tracker-server2.onrender.com/", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
